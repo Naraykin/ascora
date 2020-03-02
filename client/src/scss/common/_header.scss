@@ -1,0 +1,85 @@
+.header {
+    position: fixed;
+    top: 10px;
+    left: 40px;
+    display: flex;
+    width: calc(100% - 160px);
+    height: 56px;
+    padding: 0 40px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+    font-family: 'Montserrat', sans-serif;
+    //border-radius: 40px;
+    //background-color: #ffffff1f;
+    //border: 1px solid #ffffff0f;
+    
+    .header__logo {
+        display: flex;
+        
+        transform: scaleX(1.2);
+        .header__logo-link {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 38px;
+            text-decoration: none;
+            letter-spacing: -2px;
+            transition: .5s ease;
+
+            &:hover {
+                color: #30f070;
+            }
+        }
+    }
+    
+    .header-navigation {
+        display: flex;
+        
+        .header-navigation__item {
+            color: #efefef;
+            text-decoration: none;
+            transition: .5s ease;
+            letter-spacing: 1px;
+            font-weight: 300;
+            font-size: 17px;
+            display: flex;
+            text-transform: uppercase;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 34px;
+            padding-top: 12px;
+            position: relative;
+            background-color: #232323;
+            //box-shadow: 0 4px 0 0 #323232;
+            margin-left: 5px;
+            
+            &_active {
+
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #30f070;
+                width: 0;
+                height: 3px;
+                transition: .3s ease;
+            }
+            
+            &:hover {
+                //text-shadow: 0px 0px 30px #3be2b8a0;
+                color: #30f070;
+                background-color: #1f1f1f;
+                //box-shadow: 0 3px 0 0 #30f070;
+                //letter-spacing: 0;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

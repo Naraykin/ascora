@@ -1,0 +1,16 @@
+@import './common/common';
+@import './index/index';
+@import './media/media';
+@import './news/news';
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #323262;
+    font-family: 'Montserrat', sans-serif;
+}

@@ -1,0 +1,31 @@
+.news-preview {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 240px;
+
+    .news-preview__title {
+        font-size: 20px;
+        color: #efefef;
+    }
+
+    .news-preview__content {
+        color: #afafaf;
+        background-color: #efefef1f;
+        padding: 0 20px;
+    }
+
+    .news-preview__author {
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .news-preview__date {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        font-size: 14px;
+        color: #afafafa0;
+    }
+}
