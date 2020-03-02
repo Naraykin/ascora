@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import Helmet from 'react-helmet';
 
 function Projects() {
     return (
-        <div>
-            <h1>Проекты команды Ascora</h1>
-        </div>
+        <Fragment>
+            <Helmet>
+                <title>Ascora | Проекты</title>
+            </Helmet>
+            <div className='projects'>
+                <h1 className='projects__title'>Проекты нашей команды</h1>
+            </div>
+        </Fragment>
     )
 }
 

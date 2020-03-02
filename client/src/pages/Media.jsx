@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import ArtPreview from '../components/ArtPreview';
 
@@ -8,6 +8,7 @@ import SliImg from '../img/sli.jpg';
 import MrImg from '../img/mr.jpg';
 import ColImg from '../img/colour.jpg';
 import MobImg from '../img/mob.jpg';
+import Helmet from 'react-helmet';
 
 function Media() {
     const arts = [
@@ -55,42 +56,47 @@ function Media() {
     }
 
     return (
-        <div className='media'>
-            <div className='media-top'>
-                <h1 className='title media__title'>Материалы проектов</h1>
-                <nav className='media-navitaion'>
-                    <a href="#arts" className='media-navitaion__item'>Арты</a>
-                    
-                    <a href="#video" className='media-navitaion__item'>Видео</a>
-                    
-                    <a href="#stories" className='media-navitaion__item'>Истории</a>
-                </nav>
-            </div>
-            <div className='media-wrapper'>
-                <div className='media-description'>
-                    <p>
-                        Здесь мы собрали для тебя разного рода арт-объедки гыгы гага заткнись.
-                        Требуется наполнить разделы текстом.
-                        Это всё стоит заменить.
-                    </p>
+        <Fragment>
+            <Helmet>
+                <title>Ascora | Материалы</title>
+            </Helmet>
+            <div className='media'>
+                <div className='media-top'>
+                    <h1 className='title media__title'>Материалы проектов</h1>
+                    <nav className='media-navitaion'>
+                        <a href="#arts" className='media-navitaion__item'>Арты</a>
+                        
+                        <a href="#video" className='media-navitaion__item'>Видео</a>
+                        
+                        <a href="#stories" className='media-navitaion__item'>Истории</a>
+                    </nav>
                 </div>
-                <section id="arts" className='media-section media-section_arts'>
-                    <div className='media-arts__top'>
-                        <h2 className='media-arts__title'>Арты</h2>
-                        <Link className='media-arts__more' to='/media/arts'>Ещё</Link>
+                <div className='media-wrapper'>
+                    <div className='media-description'>
+                        <p>
+                            Здесь мы собрали для тебя разного рода арт-объедки гыгы гага заткнись.
+                            Требуется наполнить разделы текстом.
+                            Это всё стоит заменить.
+                        </p>
                     </div>
-                    <div className='media-arts__wrapper'>
-                        { showArts() }
-                    </div>
-                </section>
-                <section id="video" className='media-section media-section_video'>
-                    <h2>(видео)</h2>
-                </section>
-                <section id="stories" className='media-section media-section_stories'>
-                    <h2>(истории)</h2>
-                </section>
+                    <section id="arts" className='media-section media-section_arts'>
+                        <div className='media-arts__top'>
+                            <h2 className='media-arts__title'>Арты</h2>
+                            <Link className='media-arts__more' to='/media/arts'>Ещё</Link>
+                        </div>
+                        <div className='media-arts__wrapper'>
+                            { showArts() }
+                        </div>
+                    </section>
+                    <section id="video" className='media-section media-section_video'>
+                        <h2>(видео)</h2>
+                    </section>
+                    <section id="stories" className='media-section media-section_stories'>
+                        <h2>(истории)</h2>
+                    </section>
+                </div>
             </div>
-        </div>
+        </Fragment>
     )
 }
 

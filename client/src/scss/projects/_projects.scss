@@ -1,0 +1,13 @@
+.projects {
+    height: 100vh;
+    width: 100%;
+
+    .projects__title {
+        width: calc(100% - 40px);
+        text-align: center;
+        margin-top: 140px;
+        font-size: 52px;
+        color: #fafafa;
+        margin-bottom: 20px;
+    }
+}

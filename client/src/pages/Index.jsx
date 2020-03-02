@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import NewsPreview from '../components/NewsPreview';
 import LogoImg from '../img/ascora-square.jpg';
-import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 function Index() {
@@ -39,7 +39,31 @@ function Index() {
                     <div className='index-news__wrapper'>
                         { posts.sort((a, b) => new Date(b.date) - new Date(a.date)).map(post => <NewsPreview key={ post._id } post={ post} /> ) }
                     </div>
-                    <div className='index-news__more-btn'></div>
+                    <Link to='/news' className='index-news__more-btn'>Все новости</Link>
+                </section>
+                <section className='index-projects'>
+                    <h2 className='index-projects__title'>(проекты)</h2>
+                    <div className="index-projects__wrapper">
+                        <div className="index-projects__project">[проект 1]</div>
+                        <div className="index-projects__project">[проект 2]</div>
+                    </div>
+                </section>
+                <section className='index-media'>
+                    <h2 className='index-media__title'>(материалы)</h2>
+                    <div className='index-media__wrapper'>
+                        <div className='index-media__arts'>(арты)</div>
+                        <div className='index-media__video'>(видео)</div>
+                        <div className='index-media__stories'>(истории)</div>
+                    </div>
+                </section>
+                <section className='index-about'>
+                    <h2 className='index-about__title'>(о нас)</h2>
+                    <p className='index-about__text'>Метамодерновый фронт един</p>
+                    <div className='index-about__wrapper'>
+                        <a className='index-about__link' href='#'>[вк]</a>
+                        <a className='index-about__link' href='#'>[ют]</a>
+                        <a className='index-about__link' href='#'>[хз]</a>
+                    </div>
                 </section>
             </div>
         </Fragment>

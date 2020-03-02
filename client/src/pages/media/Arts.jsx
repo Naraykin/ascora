@@ -6,7 +6,7 @@ function Arts() {
     return (
         <Fragment>
             <Helmet>
-                <title>Ascora | </title>
+                <title>Ascora | Арты</title>
             </Helmet>
             <div>
                 <h1>Арты</h1>
