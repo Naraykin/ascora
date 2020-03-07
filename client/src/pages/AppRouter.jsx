@@ -5,37 +5,47 @@ import Footer from '../components/Footer';
 import Index from './Index';
 import News from './News';
 import Projects from './Projects';
-import Media from './Media';
+import MediaRouter from './MediaRouter';
+import AdminRouter from './admin/AdminRouter';
 import About from './About';
 import NoMatch from './NoMatch';
 
 function AppRouter() {
     return (
         <Fragment>
-            <Header />
-            <div className='main-wrapper'>
-                <Switch>
-                    <Route exact path='/'>
-                        <Index />
-                    </Route>
-                    <Route path='/News'>
-                        <News />
-                    </Route>
-                    <Route path='/projects'>
-                        <Projects />
-                    </Route>
-                    <Route path='/media'>
-                        <Media />
-                    </Route>
-                    <Route path='/about'>
-                        <About />
-                    </Route>
-                    <Route path='*'>
-                        <NoMatch />
-                    </Route>
-                </Switch>
-            </div>
-            <Footer />
+            <Switch>
+                <Route path='/edit'>
+                    <AdminRouter />
+                </Route>
+                <Route path='/'>
+                    <Header />
+                    <div className='main-wrapper'>
+                        <Switch>
+                            <Route exact path='/'>
+                                <Index />
+                            </Route>
+                            <Route path='/News'>
+                                <News />
+                            </Route>
+                            <Route path='/projects'>
+                                <Projects />
+                            </Route>
+                            <Route path='/media'>
+                                <MediaRouter />
+                            </Route>
+                            <Route path='/about'>
+                                <About />
+                            </Route>
+
+                            <Route path='*'>
+                                <NoMatch />
+                            </Route>
+                        </Switch>
+                    </div>
+                    <Footer />
+                </Route>
+            </Switch>
+            
         </Fragment>
     )
 }

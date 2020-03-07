@@ -1,4 +1,6 @@
 .index {
+
+    
     
     .index-top {
         height: 100vh;
@@ -9,31 +11,110 @@
         position: relative;
 
         .index__logo {
-            margin-top: 10%;
-            width: 250px;
-            height: 250px;
+            margin-top: 50px;
+            padding: 0;
+            //width: 250px;
+            //height: 250px;
+            fill: #efefef;
+            height: 200px;
+            color: #fff;
+            font-size: 100px;
             background-position: center;
             background-size: cover;
         }
         
         .index__title {
-            margin-top: 50px;
-            font-size: 36px;
+            margin-top: 30px;
+            width: 50%;
+            //font-size: 36px;
+            text-align: left;
+            font-size: 28px;
             color: #efefef;
-            font-family: 'Montserrat', sans-serif;
+            //font-family: 'Montserrat', sans-serif;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .index-row {
+            margin-top: 2%;
+            height: 260px;
+            width: 80%;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            border-bottom: 2px solid #fff;
+
+
+            .index-row__dev {
+                position: absolute;
+                width: 250px;
+                height: 100%;
+                margin: 0 10px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transform: scale(1);
+                transition: .5s ease;
+                transform-origin: 50% 100%;
+                filter: grayscale(100%);
+                top: 0;
+                
+                &:hover {
+                    filter: grayscale(0%) contrast(100%);
+                    //z-index: 5;
+                }
+                
+                &_center {
+                    filter: grayscale(100%) contrast(100%);
+                    left: calc(50% - 125px);
+                    z-index: 4;
+                }
+                
+                &_close-left {
+                    filter: grayscale(100%) contrast(90%);
+                    left: calc(25% - 125px);
+                    z-index: 3;
+                }
+                
+                &_close-right {
+                    filter: grayscale(100%) contrast(90%);
+                    right: calc(25% - 125px);
+                    z-index: 3;
+                }
+                
+                &_far-left {
+                    filter: grayscale(100%) contrast(80%);
+                    left: calc(10% - 125px);
+                    z-index: 2;
+                }
+                
+                &_far-right {
+                    filter: grayscale(100%) contrast(80%);
+                    right: calc(10% - 125px);
+                    z-index: 2;
+                }
+            }
         }
         
         .index-top__arrow {
             position: absolute;
-            bottom: 55px;
+            bottom: 45px;
+
             font-weight: 100;
             font-size: 48px;
-            transform: rotate(180deg);
             color: #efefefa0;
             animation-name: arrow-down;
             animation-duration: 2s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
+            height: 38px;
+
+            .a{
+                fill:#fff;
+            }
+
+            .b{
+                fill:#e6e7e8;
+            }
         }
     }
 
@@ -48,24 +129,28 @@
         .index-news__title {
             color: #efefef;
             margin-left: 20px;
-            font-size: 42px;
+            font-size: 32px;
+            text-transform: uppercase;
+            font-weight: 500;
+            width: calc(100% - 40px);
+            text-align: left;
         }
 
         .index-news__wrapper {
             margin-top: 30px;
             width: calc(90% - 100px);
-            padding: 20px 50px;
+            //padding: 20px 50px;
             border-radius: 5px;
             background-color: #288cff08;
         }
 
         .index-news__more-btn {
-            margin: 20px 0;
-            padding: 6px 30px;
+            margin: 40px 0;
+            padding: 8px 40px;
             background-color: #aa8b62;
             color: #efefef;
             font-weight: 600;
-            font-size: 22px;
+            font-size: 24px;
             text-decoration: none;
             transition: .3s ease;
             
@@ -76,37 +161,84 @@
     }
     
     .index-projects {
-        height: 100vh;
+        height: auto;
         width: 100%;
         display: flex;
         align-items: center;
-        flex-direction: column;
-        background-color: #0077ff10;
-
-        .index-projects__title {
-            font-size: 32px;
-            font-weight: 700;
-            color: #efefef;
-            margin-top: 30px;
-            margin-bottom: 40px;
-        }
-
-        .index-projects__wrapper {
+        background-color: #2f223b;
+        background-position: center;
+        background-size: cover;
+        
+        .index-projects__overlay {
+            padding-top: 0px;
+            height: 100vh;
+            width: 100%;
             display: flex;
-
-
-            .index-projects__project {
-                background-color: #9e6638;
-                display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            background-color: #2f223b80;
+            position: relative;
+            
+            .index-projects__title {
+                font-size: 32px;
+                font-weight: 500;
+                text-transform: uppercase;
                 color: #efefef;
-                letter-spacing: 2px;
-                justify-content: center;
-                align-items: center;
-                border-radius: 5px;
-                padding: 20px 30px;
-                width: 300px;
-                height: 60vh;
-                margin: 15px 30px;
+                margin-left: 30px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+                text-align: left;
+            }
+
+            .index-projects__info-wrapper {
+                color: #efefef;
+                margin-left: 50px;
+                background-color: #000000;
+                width: 40%;
+                padding: 10px 30px;
+
+                .index-projects-current__title {
+                    color: #efefef;
+                }
+
+                .index-projects-current__content {
+                    margin-left: 20px;
+                    //column-count: 2;
+                    height: 200px;
+                    width: calc(100% - 20px);
+                }
+            }
+            
+            .index-projects__wrapper {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                height: 50vh;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+            }
+
+            .index-project__slider-row {
+                position: absolute;
+                display: flex;
+                bottom: 20px;
+                width: 100px;
+                height: 30px;
+                margin-left: 20px;
+                justify-content: space-around;
+
+                .index-project__slider-dot{
+                    display: flex;
+                    height: 8px;
+                    width: 8px;
+                    margin: 10px 0;
+                    background-color: #efefefa0;
+                    
+                    &_active {
+                        background-color: #efefef;
+                    }
+                }
             }
         }
     }
@@ -122,8 +254,10 @@
 
         .index-media__title {
             font-size: 32px;
-            font-weight: 700;
+            font-weight: 500;
+            text-transform: uppercase;
             color: #efefef;
+            width: calc(100% - 40px);
             margin-top: 50px;
             margin-bottom: 40px;
         }
@@ -158,7 +292,9 @@
 
         .index-about__title {
             font-size: 32px;
-            font-weight: 700;
+            font-weight: 500;
+            width: calc(100% - 40px);
+            text-transform: uppercase;
             color: #efefef;
             margin-top: 50px;
             margin-bottom: 10px;
@@ -192,6 +328,7 @@
                 
                 &:hover {
                     color: #ffffff;
+                    border-radius: 50px;
                     background-color: #afafaf1f;
                 }
             }
@@ -201,22 +338,22 @@
 
 @keyframes arrow-down {
     0% {
-        transform: rotate(180deg) translateY(10px);
+        transform: translateY(-10px);
         opacity: 0;
     }
     
     45% {
-        transform: rotate(180deg) translateY(0);
+        transform: translateY(0);
         opacity: 1;
     }
     
     90% {
-        transform: rotate(180deg) translateY(-10px);
+        transform: translateY(10px);
         opacity: 0;
     }
 
     100% {
-        transform: rotate(180deg) translateY(10px);
+        transform: translateY(-10px);
         opacity: 0;
     }
 }

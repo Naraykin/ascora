@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import ArtPreview from '../components/ArtPreview';
+import ArtPreview from '../../components/ArtPreview';
 
-import TreesImg from '../img/trees.jpg';
-import BbImg from '../img/bb.jpg';
-import SliImg from '../img/sli.jpg';
-import MrImg from '../img/mr.jpg';
-import ColImg from '../img/colour.jpg';
-import MobImg from '../img/mob.jpg';
+import TreesImg from '../../img/trees.jpg';
+import BbImg from '../../img/bb.jpg';
+import SliImg from '../../img/sli.jpg';
+import MrImg from '../../img/mr.jpg';
+import ColImg from '../../img/colour.jpg';
+import MobImg from '../../img/mob.jpg';
 import Helmet from 'react-helmet';
 
 function Media() {
