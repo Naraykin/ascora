@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import LogoIcon from '../components/Icons/Logo';
 import AboutIcon from '../components/Icons/AboutIcon';
 import MediaIcon from '../components/Icons/IconPresent';
+import NewsIcon from '../components/Icons/NewsIcon';
 
 function Header() {
     const HIDE_CLASS = 'header_hide';
@@ -42,7 +43,7 @@ function Header() {
                 </Link>
             </div>
             <nav className='header-navigation'>
-                <Link to='/news' className={`header-navigation__item ${location.pathname === '/'}`}><span>N</span>Новости</Link>
+                <Link to='/news' className={`header-navigation__item ${location.pathname === '/'}`}><NewsIcon className='header-navigation__item-icon' />Новости</Link>
                 <Link to='/projects' className='header-navigation__item'><span>P</span>Проекты</Link>
                 <Link to='/media' className='header-navigation__item'><MediaIcon className='header-navigation__item-icon' />Материалы</Link>
                 <Link to='/about' className='header-navigation__item'><AboutIcon className='header-navigation__item-icon' />О нас</Link>

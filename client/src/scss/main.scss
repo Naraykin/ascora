@@ -1,9 +1,11 @@
+@import './variables';
 @import './common/common';
 @import './index/index';
 @import './media/media';
 @import './news/news';
 @import './projects/projects';
 @import './about/about';
+@import './admin/admin';
 
 html {
     scroll-behavior: smooth;
@@ -15,4 +17,26 @@ html, body {
     padding: 0;
     background-color: #323262;
     font-family: 'Montserrat', sans-serif;
+}
+
+.fade-enter {
+    opacity: 0.01;
+    transform: translateY(50%);
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: .3s ease;
+}
+
+.fade-exit {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.fade-exit-active {
+    transform: translateY(-50%);
+    opacity: 0.01;
+    transition: .3s ease;
 }

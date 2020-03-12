@@ -41,7 +41,8 @@
             &:hover {
 
                 .header-logo__icon {
-                    fill: #30f070;
+                    //fill: #30f070;
+                    fill: $primary;
                 }
             }
 
@@ -88,17 +89,19 @@
                 fill: #efefef;
                 width: 35px;
                 height: 35px;
+                transition: .5s ease;
             }
             
             &_active {
                 color: #70e296;
+                color: $primary;
 
                 .header-navigation__item-icon {
-                    
-                    fill: #70e296;
+                    //fill: #70e296;
+                    fill: $primary;
                 }
             }
-
+            
             &::after {
                 content: '';
                 position: absolute;
@@ -106,6 +109,7 @@
                 left: 50%;
                 transform: translateX(-50%);
                 background-color: #30f070;
+                background-color: $primary;
                 width: 0;
                 height: 3px;
                 transition: .3s ease;
@@ -113,10 +117,12 @@
             
             &:hover {
                 color: #30f070;
+                color: $primary;
                 //background-color: #1f1f1f;
-
+                
                 .header-navigation__item-icon {
                     fill: #30f070;
+                    fill: $primary;
                 }
 
                 &::after {
