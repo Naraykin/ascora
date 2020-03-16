@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function ProjectPreview({ project, setBackground, activeProject }) {
+function ProjectPreview({ project, setBackground, activeProject, setActiveProject }) {
 
     const ACTIVE_CLASS = 'project-preview_active';
 
@@ -12,7 +12,7 @@ function ProjectPreview({ project, setBackground, activeProject }) {
     }, [activeProject]);
 
     return (
-        <div className={ `project-preview ${isActive ? ACTIVE_CLASS : ''}` }>
+        <div className={ `project-preview ${isActive ? ACTIVE_CLASS : ''}` } onClick={ setActiveProject }>
             <div className="project-preview__image-container">
                 <img className="project-preview__image" src={ project.image } alt={ project.title } />
             </div>

@@ -1,0 +1,83 @@
+.index-projects {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #2f223b;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    .index-projects__overlay {
+        padding-top: 0px;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        background-color: #2f223b80;
+        position: relative;
+        
+        .index-projects__title {
+            font-size: 32px;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #efefef;
+            margin-left: 30px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .index-projects__info-wrapper {
+            color: #efefef;
+            margin-left: 50px;
+            background-color: #000000;
+            width: 40%;
+            padding: 10px 30px;
+
+            .index-projects-current__title {
+                color: #efefef;
+            }
+
+            .index-projects-current__content {
+                margin-left: 20px;
+                //column-count: 2;
+                height: 200px;
+                width: calc(100% - 20px);
+            }
+        }
+        
+        .index-projects__wrapper {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            height: 50vh;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        .index-project__slider-row {
+            position: absolute;
+            display: flex;
+            bottom: 20px;
+            width: auto;
+            height: 30px;
+            left: 30px;
+            justify-content: space-around;
+
+            .index-project__slider-dot{
+                display: flex;
+                height: 8px;
+                width: 8px;
+                margin-right: 25px;
+                background-color: #efefefa0;
+                
+                &_active {
+                    background-color: #efefef;
+                }
+            }
+        }
+    }
+}

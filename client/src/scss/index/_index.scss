@@ -1,3 +1,5 @@
+@import './projects-section';
+
 .index {
     
     .index-top {
@@ -11,8 +13,9 @@
         //background-color: #2a443c;
         
         background-color: #25645c;
-        background-image: linear-gradient(#356e6b, #2b6b59);
-
+        //background-image: linear-gradient(#356e6b, #2b6b59);
+        background-image: linear-gradient(#235158, #2c596b);
+        
         .index-top-toggle{
             position: absolute;
             display: flex;
@@ -55,14 +58,21 @@
         }
         
         .index__title {
-            margin-top: 30px;
-            width: 50%;
+            margin-top: 35px;
+            //margin-right: 500px;
+            width: 700px;
             //font-size: 36px;
-            text-align: left;
-            font-size: 28px;
+            text-align: center;
+            font-size: 20px;
+            letter-spacing: 1px;
+            line-height: 36px;
             color: #efefef;
+            font-weight: 100;
+            text-transform: lowercase;
+            //transform: scaleX(1.1);
             //font-family: 'Montserrat', sans-serif;
-            font-family: 'Press Start 2P', cursive;
+            //font-family: 'Press Start 2P', sans-serif;
+            font-family: $font-main;
         }
         
         .index-menu {
@@ -78,7 +88,7 @@
                 .index-menu__item-icon {
                     fill: #efefef;
                     transition: .3s ease;
-                    height: 60px;
+                    height: 50px;
                     
                     &:hover {
                         fill: $primary;
@@ -97,28 +107,28 @@
             animation-timing-function: ease;
             
             &_large {
-                top: calc(50% - 350px);
-                height: 700px;
-                width: 700px;
-                border-radius: 500px;
-                background-color: #dd6a1e20;
+                top: calc(50% - 250px);
+                height: 500px;
+                width: 500px;
+                //border-radius: 500px;
+                background-color: #ff7b2320;
             }
             
             &_medium {
-                top: calc(50% - 200px);
-                height: 400px;
-                width: 400px;
-                border-radius: 300px;
-                background-color: #dd6a1e50;
+                top: calc(50% - 150px);
+                height: 300px;
+                width: 300px;
+                //border-radius: 300px;
+                background-color: #ff7b2340;
                 
             }
             
             &_small {
-                top: calc(50% - 100px);
-                background-color: #dd6a1ea0;
-                border-radius: 200px;
-                height: 200px;
-                width: 200px;
+                top: calc(50% - 75px);
+                background-color: #ff7b2360;
+                //border-radius: 200px;
+                height: 150px;
+                width: 150px;
             }
         }
 
@@ -129,7 +139,8 @@
             display: flex;
             justify-content: space-around;
             position: relative;
-            //border-bottom: 2px solid #fff;
+            padding-bottom: 1px;
+            border-bottom: 10px solid #fff;
 
 
             .index-row__dev {
@@ -145,7 +156,7 @@
                 transition: .5s ease;
                 transform-origin: 50% 100%;
                 filter: grayscale(100%);
-                top: 0;
+                top: -1;
                 
                 &:hover {
                     filter: grayscale(0%) contrast(100%);
@@ -188,7 +199,7 @@
         
         .index-top__arrow {
             position: absolute;
-            bottom: 45px;
+            bottom: 60px;
 
             font-weight: 100;
             font-size: 48px;
@@ -214,7 +225,7 @@
             left: 0;
             width: 100%;
             height: 250px;
-            fill: #2b6b59;
+            fill: #2c596b;
         }
     }
 
@@ -258,90 +269,6 @@
             
             &:hover {
                 background-color: #d18f38;
-            }
-        }
-    }
-    
-    .index-projects {
-        height: auto;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        background-color: #2f223b;
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        
-        .index-projects__overlay {
-            padding-top: 0px;
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
-            background-color: #2f223b80;
-            position: relative;
-            
-            .index-projects__title {
-                font-size: 32px;
-                font-weight: 500;
-                text-transform: uppercase;
-                color: #efefef;
-                margin-left: 30px;
-                margin-top: 40px;
-                margin-bottom: 40px;
-                text-align: left;
-            }
-
-            .index-projects__info-wrapper {
-                color: #efefef;
-                margin-left: 50px;
-                background-color: #000000;
-                width: 40%;
-                padding: 10px 30px;
-
-                .index-projects-current__title {
-                    color: #efefef;
-                }
-
-                .index-projects-current__content {
-                    margin-left: 20px;
-                    //column-count: 2;
-                    height: 200px;
-                    width: calc(100% - 20px);
-                }
-            }
-            
-            .index-projects__wrapper {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                height: 50vh;
-                top: 50%;
-                right: 20px;
-                transform: translateY(-50%);
-            }
-
-            .index-project__slider-row {
-                position: absolute;
-                display: flex;
-                bottom: 20px;
-                width: 100px;
-                height: 30px;
-                margin-left: 20px;
-                justify-content: space-around;
-
-                .index-project__slider-dot{
-                    display: flex;
-                    height: 8px;
-                    width: 8px;
-                    margin: 10px 0;
-                    background-color: #efefefa0;
-                    
-                    &_active {
-                        background-color: #efefef;
-                    }
-                }
             }
         }
     }

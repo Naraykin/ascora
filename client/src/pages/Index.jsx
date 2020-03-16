@@ -1,23 +1,21 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getPosts } from '../actions/postActions';
 import UnderlayFirst from '../components/Icons/UnderlayFirst';
 import PropTypes from 'prop-types';
 
 import NewsPreview from '../components/NewsPreview';
-import ProjectPreview from '../components/ProjectPreview';
 import ArrowDownIcon from '../components/Icons/ArrowDownIcon';
-import Logo from '../components/Icons/Logo';
+//import Logo from '../components/Icons/Logo';
+import Logo from '../components/Icons/NewLogo';
 import NewsIcon from '../components/Icons/NewsIcon';
-import MediaIcon from '../components/Icons/IconPresent';
+import ProjectsIcon from '../components/Icons/ProjectsIcon';
+import MediaIcon from '../components/Icons/MediaIcon';
 import AboutIcon from '../components/Icons/AboutIcon';
 import Underlay from '../components/Icons/Underlay';
-
-
-//import LogoImg from '../img/ascora-square.jpg';
+import IndexProjectsSection from '../components/index/ProjectsSection';
 
 import VadimSFadedImg from '../img/team/faded/vadim_s.png';
 import IgorMFadedImg from '../img/team/faded/igor_m.png';
@@ -29,12 +27,6 @@ import IgorMImg from '../img/team/igor_m.png';
 import LubovOImg from '../img/team/lubov_o.png';
 import VladPImg from '../img/team/vlad_p.png';
 import VadimGImg from '../img/team/vadim_g.png';
-import GlsImg from '../img/gls.png';
-import DrkImg from '../img/drk.png';
-import TvodImg from '../img/tvod.jpg';
-import TvodBg0Img from '../img/tvod_bg_0.jpg';
-import TvodBg1Img from '../img/tvod_bg_1.jpg';
-import IconPresent from '../components/Icons/IconPresent';
 
 function Index({ getPosts, post }) {
     const ABOUT_TITLE = 'О нас';
@@ -51,31 +43,9 @@ function Index({ getPosts, post }) {
     const [vladPImage, setVladPImage] = useState(VladPImg);
     const [vadimGImage, setVadimGImage] = useState(VadimGImg);
 
-    const [activeProjectID, setActiveProjectID] = useState(0);
-    const [projectsBackground, setProjectsBackground] = useState(TvodBg0Img);
-    const [projectsCurrentTitle, setProjectsCurrentTitle] = useState('...');
-    const [projectsCurrentContent, setProjectsCurrentContent] = useState('...');
-
     const [news, setNews] = useState([]);
 
     const [topToggle, setTopToggle] = useState(TOP_TOGGLE.UNDERLINED);
-
-    const projects = [
-        {
-            _id: 0,
-            title: 'The Void of Desires',
-            content: 'Просторы космоса наполнились слухами о храме, в котором может исполниться любое желание. Многие пытались его найти, но обнаружить его удалось лишь двум космическим беженцам, чью планету уничтожило богоподобное существо, именуемое Конструктором.',
-            image: TvodImg,
-            backgrounds: [TvodBg0Img, TvodBg1Img]
-        },
-        {
-            _id: 1,
-            title: '[проект 2]',
-            content: 'Просторы космоса наполнились слухами о храме, в котором может исполниться любое желание. Многие пытались его найти, но обнаружить его удалось лишь двум космическим беженцам, чью планету уничтожило богоподобное существо, именуемое Конструктором.',
-            image: TvodImg,
-            backgrounds: [TvodBg0Img, TvodBg1Img]
-        }
-    ]
 
     // INIT
     useEffect(() => {
@@ -105,29 +75,17 @@ function Index({ getPosts, post }) {
         if(post) setNews(post.posts);
     }, [post])
 
-    useEffect(() => {
-        const currentProject = projects.find(project => project._id === activeProjectID); 
-        setProjectsCurrentTitle(currentProject.title);
-        setProjectsCurrentContent(currentProject.content);
-        setProjectsBackground(currentProject.backgrounds[0])
-    }, [activeProjectID]);
-
     function showNews() {
         if(news)
             return news.sort((a, b) => new Date(b.date) - new Date(a.date)).map(post => <NewsPreview key={ post._id } post={ post} /> )
     }
 
-    function showProjects() {
-        return (
-            <TransitionGroup>
-                { projects.map(project => (
-                    <CSSTransition key={ project._id } timeout={ 500 }>
-                        <ProjectPreview project={ project } activeProject={ activeProjectID } setActiveProject={ () => setActiveProjectID(project._id) } onClick={ () => setActiveProjectID(project._id) }  />
-                    </CSSTransition>
-                )) }
-            </TransitionGroup>
-        );
-    }
+    /*
+        <div className='index-top-toggle'>
+            <div className={`index-top-toggle__item ${topToggle === TOP_TOGGLE.UNDERLINED ? 'index-top-toggle__item_active' : ''}`} onClick={() => setTopToggle(TOP_TOGGLE.UNDERLINED)}>{TOP_TOGGLE.UNDERLINED}</div>
+            <div className={`index-top-toggle__item ${topToggle === TOP_TOGGLE.FADED ? 'index-top-toggle__item_active' : ''}`} onClick={() => setTopToggle(TOP_TOGGLE.FADED)}>{TOP_TOGGLE.FADED}</div>
+        </div>
+    */
 
     return (
         <Fragment>
@@ -136,21 +94,18 @@ function Index({ getPosts, post }) {
             </Helmet>
             <div className='index'>
                 <section className='index-top'>
-                    <div className='index-top-toggle'>
-                        <div className={`index-top-toggle__item ${topToggle === TOP_TOGGLE.UNDERLINED ? 'index-top-toggle__item_active' : ''}`} onClick={() => setTopToggle(TOP_TOGGLE.UNDERLINED)}>{TOP_TOGGLE.UNDERLINED}</div>
-                        <div className={`index-top-toggle__item ${topToggle === TOP_TOGGLE.FADED ? 'index-top-toggle__item_active' : ''}`} onClick={() => setTopToggle(TOP_TOGGLE.FADED)}>{TOP_TOGGLE.FADED}</div>
-                    </div>
+                    
                     <div className='index-menu'>
                         <Link to='/news' className='index-menu__item'><NewsIcon className='index-menu__item-icon' /></Link>
-                        <Link to='/projects' className='index-menu__item'><NewsIcon className='index-menu__item-icon' /></Link>
+                        <Link to='/projects' className='index-menu__item'><ProjectsIcon className='index-menu__item-icon' /></Link>
                         <Logo className='index__logo' />
-                        <Link to='/media' className='index-menu__item'><IconPresent className='index-menu__item-icon' /></Link>
+                        <Link to='/media' className='index-menu__item'><MediaIcon className='index-menu__item-icon' /></Link>
                         <Link to='/about' className='index-menu__item'><AboutIcon className='index-menu__item-icon' /></Link>
                     </div>
                     <div className='index-top__back-circle index-top__back-circle_large'/>
                     <div className='index-top__back-circle index-top__back-circle_medium'/>
                     <div className='index-top__back-circle index-top__back-circle_small'/>
-                    <div className='index-row' style={{ borderBottom: `${topToggle === TOP_TOGGLE.UNDERLINED ? '2px solid #fafafa' : 'none'}` }}>
+                    <div className='index-row'>
                         <div className='index-row__dev index-row__dev_far-left' style={{ backgroundImage: `url('${vadimSImage}')` }} />
                         <div className='index-row__dev index-row__dev_close-left' style={{ backgroundImage: `url('${lubovOImage}')` }} />
                         <div className='index-row__dev index-row__dev_center' style={{ backgroundImage: `url('${vadimGImage}')` }} />
@@ -169,24 +124,7 @@ function Index({ getPosts, post }) {
                     </div>
                     <Link to='/news' className='index-news__more-btn'>Все новости</Link>
                 </section>
-                <section className='index-projects' style={{ backgroundImage: `url('${ projectsBackground }')` }}>
-                    <div className='index-projects__overlay'>
-                        <h2 className='index-projects__title'>Проекты</h2>
-                        <div className='index-projects__info-wrapper'>
-                            <h3 className='index-projects-current__title'>{ projectsCurrentTitle }</h3>
-                            <p className='index-projects-current__content'>{ projectsCurrentContent }</p>
-                        </div>
-                        <div className="index-projects__wrapper">
-                            { showProjects() }
-                        </div>
-                        <div className='index-project__slider-row'>
-                            <div className='index-project__slider-dot' />
-                            <div className='index-project__slider-dot' />
-                            <div className='index-project__slider-dot' />
-                            <div className='index-project__slider-dot' />
-                        </div>
-                    </div>
-                </section>
+                <IndexProjectsSection />
                 <section className='index-media' >
                     <h2 className='index-media__title'>Материалы</h2>
                     <div className='index-media__wrapper'>

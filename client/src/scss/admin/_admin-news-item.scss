@@ -6,7 +6,6 @@
     margin-bottom: 10px;
     justify-content: flex-end;
     height: 180px;
-    
     width: 640px;
     
     .admin-news-item__main {
@@ -31,6 +30,7 @@
             margin-top: 5px;
             width: calc(100% - 20px);
             margin-left: 10px;
+            overflow-y: auto;
         }
         
         .admin-news-item__meta {

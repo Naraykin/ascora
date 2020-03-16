@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import LogoIcon from '../components/Icons/Logo';
+//import LogoIcon from '../components/Icons/Logo';
+import LogoIcon from '../components/Icons/NewLogo';
 import AboutIcon from '../components/Icons/AboutIcon';
-import MediaIcon from '../components/Icons/IconPresent';
+import ProjectsIcon from '../components/Icons/ProjectsIcon';
+import MediaIcon from './Icons/MediaIcon';
 import NewsIcon from '../components/Icons/NewsIcon';
 
 function Header() {
@@ -44,7 +46,7 @@ function Header() {
             </div>
             <nav className='header-navigation'>
                 <Link to='/news' className={`header-navigation__item ${location.pathname === '/'}`}><NewsIcon className='header-navigation__item-icon' />Новости</Link>
-                <Link to='/projects' className='header-navigation__item'><span>P</span>Проекты</Link>
+                <Link to='/projects' className='header-navigation__item'><ProjectsIcon className='header-navigation__item-icon' />Проекты</Link>
                 <Link to='/media' className='header-navigation__item'><MediaIcon className='header-navigation__item-icon' />Материалы</Link>
                 <Link to='/about' className='header-navigation__item'><AboutIcon className='header-navigation__item-icon' />О нас</Link>
             </nav>
