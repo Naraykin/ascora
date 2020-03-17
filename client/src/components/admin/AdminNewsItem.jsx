@@ -19,7 +19,7 @@ function AdminNewsItem({ item/*, deletePost*/ }) {
                 </div>
             </div>
             <div className='admin-news-item__actions'>
-                <input className='admin-news-item__delete-button' type='button' value={ DELETE_BUTTON_TEXT } onClick={ deletePost } />
+                <input className='admin-news-item__delete-button' type='button' value={ DELETE_BUTTON_TEXT } onClick={ () => {} /*deletePost*/ } />
                 <Link className='admin-news-item__edit-link' to={`/edit/${ item._id }`}>{ EDIT_LINK_TEXT }</Link>
             </div>
         </div>
