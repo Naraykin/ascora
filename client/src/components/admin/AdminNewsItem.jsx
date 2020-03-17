@@ -30,4 +30,4 @@ const mapStateToProps = (state) => ({
     post: state.post
 });
 
-export default connect(mapStateToProps, { /*deletePost*/ })(AdminNewsItem);
+export default connect(mapStateToProps /*, { deletePost }*/)(AdminNewsItem);
