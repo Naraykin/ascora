@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 //import { deletePost } from '../../actions/postActions';
 import PropTypes from 'prop-types';
 
-function AdminNewsItem({ item, deletePost }) {
+function AdminNewsItem({ item/*, deletePost*/ }) {
     const EDIT_LINK_TEXT = 'Редактировать';
     const DELETE_BUTTON_TEXT = 'Удалить';
 
