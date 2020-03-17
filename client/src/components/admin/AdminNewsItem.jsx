@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { deletePost } from '../../actions/postActions';
+//import { deletePost } from '../../actions/postActions';
 import PropTypes from 'prop-types';
 
 function AdminNewsItem({ item, deletePost }) {
@@ -30,4 +30,4 @@ const mapStateToProps = (state) => ({
     post: state.post
 });
 
-export default connect(mapStateToProps, { deletePost })(AdminNewsItem);
+export default connect(mapStateToProps, { /*deletePost*/ })(AdminNewsItem);
