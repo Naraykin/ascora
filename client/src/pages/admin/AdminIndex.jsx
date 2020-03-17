@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getPosts, deletePost, addPost } from '../../actions/postActions';
+import { getPosts, /*deletePost,*/ addPost } from '../../actions/postActions';
 import PropTypes from 'prop-types';
 
 import NewsItem from '../../components/admin/AdminNewsItem';
 
-function AdminIndex({ getPosts, deletePost, addPost, post }) {
+function AdminIndex({ getPosts, /*deletePost,*/ addPost, post }) {
 
     const NEW_POST_AUTHOR = 'Веб-разработчик';
     const ADD_NEW_POST_HEADING_PLACEHOLDER = 'Заголовок';
@@ -79,7 +79,7 @@ function AdminIndex({ getPosts, deletePost, addPost, post }) {
 AdminIndex.propTypes = {
     getPosts: PropTypes.func.isRequired,
     addPost: PropTypes.func.isRequired,
-    deletePost: PropTypes.func.isRequired,
+    //deletePost: PropTypes.func.isRequired,
     post: PropTypes.object.isRequired
 };
 
@@ -87,4 +87,4 @@ const mapStateToProps = (state) => ({
     post: state.post
 });
 
-export default connect(mapStateToProps, { getPosts, deletePost, addPost })(AdminIndex);
+export default connect(mapStateToProps, { getPosts, /*deletePost,*/ addPost })(AdminIndex);
