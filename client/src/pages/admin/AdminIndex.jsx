@@ -1,14 +1,14 @@
 import React, { useState, useEffect} from 'react';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getPosts, /*deletePost,*/ addPost } from '../../actions/postActions';
+import { getPosts, addPost } from '../../actions/postActions';
 import PropTypes from 'prop-types';
 
 import NewsItem from '../../components/admin/AdminNewsItem';
 
-function AdminIndex({ getPosts, /*deletePost,*/ addPost, post }) {
+function AdminIndex({ getPosts, addPost, post }) {
 
-    const NEW_POST_AUTHOR = 'Веб-разработчик';
+    const NEW_POST_AUTHOR = 0;
     const ADD_NEW_POST_HEADING_PLACEHOLDER = 'Заголовок';
     const ADD_NEW_POST_CONTENT_PLACEHOLDER = 'Текст поста';
 
@@ -31,7 +31,7 @@ function AdminIndex({ getPosts, /*deletePost,*/ addPost, post }) {
                 { 
                     news.map(item => 
                         <CSSTransition key={item._id} timeout={300} classNames='fade' >
-                            <NewsItem item={ item } deletePost={ () => deletePost(item._id) } />
+                            <NewsItem item={ item } />
                         </CSSTransition>)
                 }
             </TransitionGroup>
@@ -40,11 +40,9 @@ function AdminIndex({ getPosts, /*deletePost,*/ addPost, post }) {
 
     function newPost() {
         const newItem = {
-            _id: news[news.length - 1]._id + 1,
             title: newPostTitle,
-            content: <p>{ newPostContent }</p>,
-            author: NEW_POST_AUTHOR,
-            date: new Date().toDateString()
+            content: newPostContent,
+            author: NEW_POST_AUTHOR
         };
         addPost(newItem);
         //setNews([...news, newItem]);
@@ -79,7 +77,6 @@ function AdminIndex({ getPosts, /*deletePost,*/ addPost, post }) {
 AdminIndex.propTypes = {
     getPosts: PropTypes.func.isRequired,
     addPost: PropTypes.func.isRequired,
-    //deletePost: PropTypes.func.isRequired,
     post: PropTypes.object.isRequired
 };
 
@@ -87,4 +84,4 @@ const mapStateToProps = (state) => ({
     post: state.post
 });
 
-export default connect(mapStateToProps, { getPosts, /*deletePost,*/ addPost })(AdminIndex);
+export default connect(mapStateToProps, { getPosts, addPost })(AdminIndex);

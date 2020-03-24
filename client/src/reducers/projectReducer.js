@@ -32,7 +32,7 @@ const initialState = {
                     Милий, коли схочу, то я зупинюсь, повір.
                 </>,
             image: NvrImg,
-            backgrounds: [MountainsImg, SparksImg, MountainsImg]
+            backgrounds: [MountainsImg, SparksImg, MrImg]
         }
     ],
     loading: false

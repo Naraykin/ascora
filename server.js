@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const items = require('./routes/api/items');
-const posts = require('./routes/api/items');
+const posts = require('./routes/api/posts');
 
 const keys =  require('./config/keys');
 

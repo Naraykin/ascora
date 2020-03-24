@@ -10,7 +10,9 @@ export default function(state = initialState, action) {
     switch(action.type) {
         case GET_POSTS:
             return {
-                ...state
+                ...state,
+                posts: action.payload,
+                loading: false
             };
         case ADD_POST:
             return {

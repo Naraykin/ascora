@@ -12,9 +12,40 @@
         position: relative;
         //background-color: #2a443c;
         
-        background-color: #25645c;
+        background-color: #2b2564;
         //background-image: linear-gradient(#356e6b, #2b6b59);
-        background-image: linear-gradient(#235158, #2c596b);
+        background-image: $top-top-color;
+
+        .index-top__sunset-bg {
+            position: absolute;
+            bottom: 0;
+            z-index: 0;
+            width: 100%;
+            
+            .highest {
+                fill: $top-highest-color;
+            }
+            
+            .higher {
+                fill: $top-higher-color;
+            }
+            
+            .middle-top {
+                fill: $top-middle-top-color;
+            }
+            
+            .middle-bottom {
+                fill: $top-middle-bottom-color;
+            }
+            
+            .lower {
+                fill: $top-lower-color;
+            }
+            
+            .lowest {
+                fill: $top-lowerst-color;
+            }
+        }
         
         .index-top-toggle{
             position: absolute;
@@ -225,7 +256,7 @@
             left: 0;
             width: 100%;
             height: 250px;
-            fill: #2c596b;
+            fill: $top-lowerst-color;
         }
     }
 
@@ -254,7 +285,7 @@
             width: calc(90% - 100px);
             //padding: 20px 50px;
             border-radius: 5px;
-            background-color: #288cff08;
+            //background-color: #288cff08;
         }
 
         .index-news__more-btn {

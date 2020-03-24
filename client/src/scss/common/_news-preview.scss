@@ -8,18 +8,20 @@
     padding: 20px 40px;
 
     .news-preview__title {
-        font-size: 20px;
+        font-size: 24px;
         font-weight: 500;
         color: #efefef;
+        margin-top: 10px;
         margin-left: 0px;
         margin-bottom: 15px;
     }
 
     .news-preview__content {
         color: #efefefa0;
-        background-color: #0000001f;
-        padding: 15px 20px;
-        font-size: 14px;
+        //background-color: #0000001f;
+        padding: 15px 0;
+        width: 100%;
+        font-size: 18px;
         border-radius: 0px;
         overflow-y: auto;
         height: calc(60% - 10px);
@@ -37,7 +39,7 @@
     .news-preview__date {
         position: absolute;
         right: 20px;
-        bottom: 20px;
+        top: 20px;
         font-size: 14px;
         color: #afafafa0;
     }

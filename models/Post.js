@@ -8,19 +8,20 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    title: {
+    content: {
         type: String,
         required: true,
         default: ''
     },
     author: {
-        type: mongoose.Types.ObjectId,
+        type: Number,
         required: true
     },
     date: {
         type: Date,
         default: Date.now
     }
+    
 });
 
-module.exports = Item = mongoose.model('item', ItemSchema);
+module.exports = Post = mongoose.model('post', PostSchema);

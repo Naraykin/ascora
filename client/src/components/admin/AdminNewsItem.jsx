@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-//import { deletePost } from '../../actions/postActions';
+import { deletePost } from '../../actions/postActions';
 import PropTypes from 'prop-types';
 
-function AdminNewsItem({ item/*, deletePost*/ }) {
+function AdminNewsItem({ item, deletePost }) {
     const EDIT_LINK_TEXT = 'Редактировать';
     const DELETE_BUTTON_TEXT = 'Удалить';
 
@@ -19,7 +19,7 @@ function AdminNewsItem({ item/*, deletePost*/ }) {
                 </div>
             </div>
             <div className='admin-news-item__actions'>
-                <input className='admin-news-item__delete-button' type='button' value={ DELETE_BUTTON_TEXT } onClick={ () => {} /*deletePost*/ } />
+                <input className='admin-news-item__delete-button' type='button' value={ DELETE_BUTTON_TEXT } onClick={ () => deletePost(item._id) } />
                 <Link className='admin-news-item__edit-link' to={`/edit/${ item._id }`}>{ EDIT_LINK_TEXT }</Link>
             </div>
         </div>
@@ -27,7 +27,8 @@ function AdminNewsItem({ item/*, deletePost*/ }) {
 }
 
 const mapStateToProps = (state) => ({
+    deletePost: PropTypes.func.isRequired,
     post: state.post
 });
 
-export default connect(mapStateToProps /*, { deletePost }*/)(AdminNewsItem);
+export default connect(mapStateToProps , { deletePost } )(AdminNewsItem);

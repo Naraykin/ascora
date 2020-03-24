@@ -7,6 +7,13 @@ export const getProjects = () => {
     }
 }
 
+export const addProject = item => {
+    return {
+        type: ADD_PROJECT,
+        payload: item
+    }
+}
+
 export const deleteProject = id => {
     return {
         type: DELETE_PROJECT,
@@ -14,12 +21,6 @@ export const deleteProject = id => {
     }
 }
 
-export const addProject = item => {
-    return {
-        type: ADD_PROJECT,
-        payload: item
-    }
-}
 
 export const setProjectsLoading = () => {
     return {
