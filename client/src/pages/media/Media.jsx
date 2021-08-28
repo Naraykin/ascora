@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import ArtPreview from '../../components/ArtPreview';
+import MediaIcon from '../../components/Icons/MediaIcon';
 
 import TreesImg from '../../img/trees.jpg';
 import BbImg from '../../img/bb.jpg';
@@ -16,38 +17,38 @@ function Media() {
             _id: 0,
             image: TreesImg,
             title: 'Метка - два дерева',
-            description: 'Эс Эс Си Туатара'
+            description: 'ауаыкып'
         },
         {
             _id: 1,
             image: BbImg,
             title: 'Бамбук',
-            description: 'Мой корабль зовут Туатара'
+            description: 'увыфацфафц'
         },
         {
             _id: 2,
             image: SliImg,
-            title: 'Товарищ Сли',
-            description: 'Виктор. На массе.'
+            title: 'Виктор',
+            description: 'фывфафафа'
         },
         {
             _id: 3,
             image: MrImg,
             title: 'Мраморный узор',
-            description: 'Узор на мраморном камне, ну да'
+            description: 'кккккккккк'
         },
         {
             _id: 4,
             image: MobImg,
             title: 'Моб',
-            description: 'На все 100'
+            description: 'шрпоопрно'
         },
         {
             _id: 5,
             image: ColImg
             ,
-            title: 'Картинка с Ансплэша',
-            description: 'В цвете'
+            title: 'Картинка с Unsplash',
+            description: 'мивпва'
         },
     ];
 
@@ -62,7 +63,10 @@ function Media() {
             </Helmet>
             <div className='media'>
                 <div className='media-top'>
-                    <h1 className='title media__title'>Материалы проектов</h1>
+                    <div className="page-heading">
+                        <MediaIcon />
+                        <h1 className='title media__title'>Материалы проектов</h1>
+                    </div>
                     <nav className='media-navitaion'>
                         <a href="#arts" className='media-navitaion__item'>Арты</a>
                         
@@ -74,7 +78,7 @@ function Media() {
                 <div className='media-wrapper'>
                     <div className='media-description'>
                         <p>
-                            Здесь мы собрали для тебя разного рода арт-объедки гыгы гага заткнись.
+                            Хранилище материалов.
                             Требуется наполнить разделы текстом.
                             Это всё стоит заменить.
                         </p>

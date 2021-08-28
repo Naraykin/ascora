@@ -1,0 +1,53 @@
+.admin-header {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    height: 100vh;
+    background-color: #7071b1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    
+    .admin-header__username {
+        color: #cfcfcf;
+        margin-top: 15px;
+        margin-left: 10px;
+        width: calc(100% - 20px);
+    }
+    
+    .admin-header__logout {        
+        margin-left: 10px;
+        color: #cfcfcf;
+        margin-bottom: 15px;
+    }
+    
+    .admin-header__link {
+        //padding: 5px 5px;
+        text-decoration: none;
+        color: #cfcfcf;
+        font-size: 16px;
+        margin-left: 10px;
+        padding: 6px 0;
+        width: calc(100% - 13px);
+        border-right: 3px solid #f1895f00;
+        transition: .3s ease;
+        
+        &:first-child {
+            margin-top: 30px;
+        }
+        
+        &:hover {
+            color: #ffffff;
+            border-right: 3px solid $admin-primary-active;
+        }
+        
+        &_active {
+            border-right: 3px solid $admin-primary-active;
+            background-color: #ffffff10;
+        }
+
+        &_new-group {
+            margin-top: 15px;
+        }
+    }
+}

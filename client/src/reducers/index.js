@@ -2,8 +2,12 @@ import { combineReducers } from 'redux';
 
 import postReducer from './postReducer';
 import projectReducer from './projectReducer';
+import personReducer from './personReducer';
+import imageReducer from './imageReducer';
 
 export default combineReducers({
     post: postReducer,
-    project: projectReducer
+    person: personReducer,
+    project: projectReducer,
+    image: imageReducer
 });

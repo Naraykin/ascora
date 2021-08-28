@@ -9,7 +9,7 @@ function ProjectPreview({ project, setBackground, activeProject, setActiveProjec
     useEffect(() => {
         if(activeProject === project._id) setIsActive(true);
         else setIsActive(false)
-    }, [activeProject]);
+    }, [activeProject, project._id]);
 
     return (
         <div className={ `project-preview ${isActive ? ACTIVE_CLASS : ''}` } onClick={ setActiveProject }>

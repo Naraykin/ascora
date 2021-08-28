@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet';
+import ProjectsIcon from '../components/Icons/ProjectsIcon';
 
 function Projects() {
     return (
@@ -8,7 +9,11 @@ function Projects() {
                 <title>Ascora | Проекты</title>
             </Helmet>
             <div className='projects'>
-                <h1 className='projects__title'>Проекты нашей команды</h1>
+                <div className="page-heading">
+                    <ProjectsIcon />
+                    <h1 className='projects__title'>Проекты нашей команды</h1>
+                </div>
+                <p className='projects__subtitle'>Проекция — механизм психологической защиты, в результате которого внутреннее ошибочно воспринимается как приходящее извне.</p>
             </div>
         </Fragment>
     )

@@ -5,10 +5,21 @@
 @import './news/news';
 @import './projects/projects';
 @import './about/about';
+@import './no-match';
 @import './admin/admin';
 
 html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: none;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;                  
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, code, span, label, input {
+    -webkit-font-smoothing: none;
 }
 
 html, body {

@@ -5,13 +5,15 @@ import { getProjects, } from '../../actions/projectsActions';
 import PropTypes from 'prop-types';
 
 import ProjectPreview from '../ProjectPreview';
+import IndexTitle from './IndexTitle';
+import ProjectsIcon from '../Icons/ProjectsIcon';
 
 function ProjectsSection({ getProjects, project }) {
     const PROJECTS_TITLE = 'Проекты';
 
     const [projects, setProjects] = useState([]);
     const [activeProjectID, setActiveProjectID] = useState(0);
-    const [projectsBackground, setProjectsBackground] = useState();
+    //const [projectsBackground, setProjectsBackground] = useState();
     const [projectsCurrentTitle, setProjectsCurrentTitle] = useState('...');
     const [projectsCurrentContent, setProjectsCurrentContent] = useState('...');
     const [currentBackgroundList, setCurrentBackgroundList] = useState([]);
@@ -34,7 +36,7 @@ function ProjectsSection({ getProjects, project }) {
             clearInterval(interval);
 
         }
-    }, []);
+    }, [getProjects, interval]);
 
     useEffect(() => {
         if(project) setProjects(project.projects);
@@ -51,7 +53,6 @@ function ProjectsSection({ getProjects, project }) {
         }
     }, [activeProjectID, projects]);
 
-
     useEffect(() => {
         if (backgroundSliding) interval = setInterval(() => {
             nextBg();
@@ -61,10 +62,10 @@ function ProjectsSection({ getProjects, project }) {
         return () => clearInterval(interval);
       }, [backgroundSliding, changed]);
 
-    useEffect(() => {
+    /*useEffect(() => {
         if(currentBackgroundList.length) setProjectsBackground(currentBackgroundList[0]);
         else setProjectsBackground(null);
-    }, [currentBackgroundList])
+    }, [currentBackgroundList])*/
 
     function nextBg() {
         if(currentBackgroundIndex + 1 <= currentMax) {
@@ -97,7 +98,10 @@ function ProjectsSection({ getProjects, project }) {
     return (
         <section className='index-projects' style={{ backgroundImage: `url('${ currentBackgroundList[currentBackgroundIndex] }')` }}>
             <div className='index-projects__overlay'>
-                <h2 className='index-projects__title'>{ PROJECTS_TITLE }</h2>
+                <IndexTitle title={ PROJECTS_TITLE } light={ true }>
+                    <ProjectsIcon />
+                </IndexTitle>
+                {/*<h2 className='index-projects__title'>{ PROJECTS_TITLE }</h2>*/}
                 <div className='index-projects__info-wrapper'>
                     <h3 className='index-projects-current__title'>{ projectsCurrentTitle }</h3>
                     <p className='index-projects-current__content'>{ projectsCurrentContent }</p>

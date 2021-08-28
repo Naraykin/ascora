@@ -1,0 +1,123 @@
+.admin-edit-post__top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.admin-edit-post-meta {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    grid-template-rows: 4fr 4fr 4fr 4fr;
+    grid-auto-flow: column;
+    width: 100%;
+    column-gap: 10px;
+    row-gap: 10px; 
+    padding: 20px 0;
+}
+
+.admin-edit-post__wrapper {
+    display: flex;
+    width: 1270px;
+
+    .admin-edit-post__inputs {
+
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff80;
+        width: 1080px;
+
+        .admin-edit-post__title {
+            border: none;
+            background: none;
+            padding: 10px 40px;
+            font-family: $font-main;
+            font-size: 38px;
+            font-weight: 700;
+            color: #131313;
+            line-height: normal;
+            
+            &:focus {
+                background-color: #ffffff30;
+                outline: none;                    
+            }
+        }
+        
+        .admin-edit-post__content-text {
+            resize: none;
+            font-size: 16px;
+            width: 1000px;
+            font-size: 20px;
+            padding: 10px 40px;
+            font-weight: 400;
+            color: #232323;
+            background: none;
+            border: none;
+            caret-color: #323232;
+            line-height: normal;
+            
+            font-family: $font-main;
+            
+            &:focus {
+                background-color: #ffffff30;
+                outline: none;                    
+            }
+        
+            &_left {
+            
+            }
+        
+            &_center {
+            
+            }
+        
+            &_right {
+            
+            }
+        }
+    }
+
+    .admin-edit-post__tools {
+        display: flex;
+        flex-direction: column;
+        width: 120px;
+        margin-left: 5px;
+
+        .admin-edit-post__tools-row {
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            margin-bottom: 5px;
+
+            .admin-edit-post__tools-item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 40px;
+                width: 40px;
+                font-size: 10px;
+                text-transform: uppercase;
+                cursor: pointer;
+                color: #232323;
+                background-color: #eaeaea;
+                transition: .3s ease;
+                
+                .admin-edit-post__tools-item-icon {
+                    height: 20px;
+                    fill: #323232;
+                    transition: .3s ease;
+                }
+                
+                &:hover {
+                    background-color: #fcfcfc;
+                    
+                    .admin-edit-post__tools-item-icon {
+                        fill: #131313;
+                    }
+                }
+
+            }
+        }
+    }
+}

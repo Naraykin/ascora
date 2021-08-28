@@ -1,0 +1,14 @@
+.page-heading {
+    display: flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+    margin-bottom: 0;
+
+    svg {
+        height: 70px;
+        fill: #fafafa;
+        margin-right: 35px;
+    }
+}

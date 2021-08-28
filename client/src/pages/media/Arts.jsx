@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import MediaIcon from '../../components/Icons/MediaIcon';
 
 
 function Arts() {
@@ -8,8 +9,13 @@ function Arts() {
             <Helmet>
                 <title>Ascora | Арты</title>
             </Helmet>
-            <div>
-                <h1>Арты</h1>
+            <div className="media">
+                <div className="media-top">
+                    <div className="page-heading">
+                        <MediaIcon />
+                        <h1 className="title media__title">Арты</h1>
+                    </div>
+                </div>
             </div>
         </Fragment>
     )

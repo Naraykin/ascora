@@ -1,0 +1,98 @@
+.admin-news-item {
+    background-color: #dfdfdf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+    height: 220px;
+    width: 100%;
+    
+    .admin-news-item__main {
+        position: relative;
+        //width: 760px; 
+        width: calc(100% - 40px); 
+        height: 140px;
+        padding: 10px 20px; 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .admin-news-item__heading {
+            width: calc(100% - 20px);
+            font-size: 24px;
+            font-weight: 600;
+            padding: 0 20px;
+            margin: 5px 0;
+        }
+        
+        .admin-news-item__content {
+            width: calc(100% - 20px);
+            height: 100px;
+            padding: 0 20px;
+            margin-top: 5px;
+            overflow-y: auto;
+        }
+        
+        .admin-news-item__meta {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            
+            .admin-news-item__author {
+                font-size: 14px;
+            }
+
+            .admin-news-item__date {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .admin-news-item__actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 5px;
+        height: 60px;
+        width: 100%;
+        //background-color: #cfcfcf;
+
+        .admin-news-item__btn {
+            background-color: #1212122f;
+            padding: 4px 14px;
+            transition: .3s ease;
+            margin-right: 10px;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: $font-main;
+            text-decoration: none;
+            color: #efefef;
+            
+            &:hover {
+                color: #fafafa;
+            }
+            
+            &_delete {
+                border: none;
+                border-bottom: 3px solid #912e36;
+                //color: #912e36;
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: #912e36;
+                }
+            }
+
+            &_edit {
+                //color: #f09144;
+                border-bottom: 3px solid #f09144;
+
+                &:hover {
+                    background-color: #f09144;
+                }
+            }
+        }
+    }
+}

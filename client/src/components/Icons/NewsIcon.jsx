@@ -2,7 +2,7 @@ import React from 'react'
 
 function NewsIcon({ className }) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" className={ className } viewBox="0 0 84.62 80.77">
+        <svg xmlns="http://www.w3.org/2000/svg" className={ className } shapeRendering='crispEdges' viewBox="0 0 84.62 80.77">
     <path d="M80.77,0H0V80.77H84.62V0Zm0,7.69V76.93H3.85V3.85H80.77Z"/>
     <polygon points="65.39 69.23 61.54 69.23 57.69 69.23 53.85 69.23 50 69.23 46.16 69.23 46.16 73.08 50 73.08 53.85 73.08 57.69 73.08 61.54 73.08 65.39 73.08 69.23 73.08 73.08 73.08 73.08 69.23 69.23 69.23 65.39 69.23"/>
     <polygon points="65.39 61.54 61.54 61.54 57.69 61.54 53.85 61.54 50 61.54 46.16 61.54 46.16 65.39 50 65.39 53.85 65.39 57.69 65.39 61.54 65.39 65.39 65.39 69.23 65.39 73.08 65.39 73.08 61.54 69.23 61.54 65.39 61.54"/>

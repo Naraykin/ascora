@@ -1,0 +1,20 @@
+
+.no-match {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .no-match__code {
+        color: #fafafa;
+        font-size: 72px;
+        margin: 0;
+    }
+
+    .no-match__text {
+        color: #f0f0f0;
+        font-size: 24px;
+    }
+}

@@ -1,0 +1,5 @@
+export const CHANGE_STATE_INLINE = "CHANGE_STATE_INLINE";
+export const CHANGE_STATE_BLOCK = "CHANGE_STATE_BLOCK";
+export const CHANGE_STATE_FALSE = "CHANGE_STATE_FALSE";
+export const LANG_RU = "LANG_RU";
+export const LANG_EN = "LANG_EN";

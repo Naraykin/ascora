@@ -1,4 +1,4 @@
-import axios from 'axios';
+//import axios from 'axios';
 import { GET_PROJECTS, DELETE_PROJECT, ADD_PROJECT, PROJECTS_LOADING } from './types';
 
 export const getProjects = () => {

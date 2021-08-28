@@ -1,8 +1,9 @@
-import React from 'react';
-import { GET_POSTS, ADD_POST, DELETE_POST, POSTS_LOADING } from '../actions/types';
+//import React from 'react';
+import { GET_POSTS, GET_POST, ADD_POST, DELETE_POST, POSTS_LOADING } from '../actions/types';
 
 const initialState = {
     posts: [],
+    post: {},
     loading: false
 };
 
@@ -12,6 +13,12 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 posts: action.payload,
+                loading: false
+            };
+        case GET_POST:
+            return {
+                ...state,
+                post: action.payload,
                 loading: false
             };
         case ADD_POST:

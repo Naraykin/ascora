@@ -1,13 +1,24 @@
 .projects {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     .projects__title {
-        width: calc(100% - 40px);
         text-align: center;
-        margin-top: 140px;
         font-size: 52px;
         color: #fafafa;
-        margin-bottom: 20px;
+        margin: 0;
+    }
+
+    .projects__subtitle {
+        color: #ede2ff;
+        font-size: 24px;
+        font-weight: 200;
+        margin-top: 25px;
+        margin-bottom: 50px;
+        text-align: center;
+        width: 70%;
     }
 }

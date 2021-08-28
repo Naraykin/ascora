@@ -9,18 +9,20 @@ import MountainsImg from '../img/mountains.jpg';
 import MrImg from '../img/mr.jpg';
 import SparksImg from '../img/sparks.jpg';
 
+import TvodIcon from '../components/Icons/TvodIcon';
+
 const initialState = {
     projects: [
         {
             _id: 0,
-            title: 'The Void of Desires',
+            title: <TvodIcon className='projects-tvod-title' />,
             content: 'Просторы космоса наполнились слухами о храме, в котором может исполниться любое желание. Многие пытались его найти, но обнаружить его удалось лишь двум космическим беженцам, чью планету уничтожило богоподобное существо, именуемое Конструктором.',
             image: TvodImg,
             backgrounds: [TvodBg0Img, TvodBg1Img]
         },
         {
             _id: 1,
-            title: '[проект 2]',
+            title: 'The Run of Spirits',
             content: <>
                     Це просто цигарки, й небагато шкоди в них.
                     Люба, зрозумій, мене засмучуєш ти ци.

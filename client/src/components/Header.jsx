@@ -1,14 +1,22 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-//import LogoIcon from '../components/Icons/Logo';
-import LogoIcon from '../components/Icons/NewLogo';
-import AboutIcon from '../components/Icons/AboutIcon';
+import LogoIcon from '../components/Icons/AscoraGamesHoley';
+import NewsIcon from '../components/Icons/NewsIcon';
 import ProjectsIcon from '../components/Icons/ProjectsIcon';
 import MediaIcon from './Icons/MediaIcon';
-import NewsIcon from '../components/Icons/NewsIcon';
+import AboutIcon from '../components/Icons/AboutIcon';
+import { LangContext } from './LanguageContext';
+import { LANG_RU } from '../pages/admin/AConstants/AConstants';
 
 function Header() {
     const HIDE_CLASS = 'header_hide';
+
+    const [lang] = useContext(LangContext);
+
+    const[newsText, setNewsText] = useState("");
+    const[projectsText, setProjectsText] = useState("");
+    const[mediaText, setMediaText] = useState("");
+    const[aboutText, setAboutText] = useState("");
     
     const location = useLocation();
     const [isIndex, setIsIndex] = useState(true);
@@ -37,6 +45,20 @@ function Header() {
         else setIsIndex(false);
     }, [location, pageScroll]);
 
+    useEffect(() => {
+        if(lang === LANG_RU) {
+            setNewsText("Новости");
+            setProjectsText("Проекты");
+            setMediaText("Материалы");
+            setAboutText("О нас");
+        } else {
+            setNewsText("News");
+            setProjectsText("Projects");
+            setMediaText("Media");
+            setAboutText("About us");
+        }
+    }, [lang]);
+
     return (
         <header className={`header ${ isIndex ? HIDE_CLASS : '' }`} ref={ headerRef }>
             <div className='header-logo'>
@@ -45,10 +67,10 @@ function Header() {
                 </Link>
             </div>
             <nav className='header-navigation'>
-                <Link to='/news' className={`header-navigation__item ${location.pathname === '/'}`}><NewsIcon className='header-navigation__item-icon' />Новости</Link>
-                <Link to='/projects' className='header-navigation__item'><ProjectsIcon className='header-navigation__item-icon' />Проекты</Link>
-                <Link to='/media' className='header-navigation__item'><MediaIcon className='header-navigation__item-icon' />Материалы</Link>
-                <Link to='/about' className='header-navigation__item'><AboutIcon className='header-navigation__item-icon' />О нас</Link>
+                <Link to='/news' className={`header-navigation__item ${location.pathname === '/'}`}><NewsIcon className='header-navigation__item-icon' />{ newsText }</Link>
+                <Link to='/projects' className='header-navigation__item'><ProjectsIcon className='header-navigation__item-icon' />{ projectsText }</Link>
+                <Link to='/media' className='header-navigation__item'><MediaIcon className='header-navigation__item-icon' />{ mediaText }</Link>
+                <Link to='/about' className='header-navigation__item'><AboutIcon className='header-navigation__item-icon' />{ aboutText }</Link>
             </nav>
         </header>
     )

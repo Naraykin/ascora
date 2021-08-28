@@ -38,18 +38,58 @@ router.post('/', (req, res) => {
 // @desc    Patch An Item
 // @access  Public
 router.put('/:id', (req, res) => {
-    const patchedPost = new Post({
-        title: req.body.title,
-        content: req.body.content,
-        author: req.body.author,
-    });
-    Post.findById(req.params.id)
+    let postObject = {};
+    if(req.body.title) {
+        if(req.body.content) {
+            if(req.body.author) {
+                postObject = {
+                    title: req.body.title,
+                    content: req.body.content,
+                    author: req.body.author
+                }
+            } else {
+                postObject = {
+                    title: req.body.title,
+                    content: req.body.content
+                }
+            }
+        } else if(req.body.author) {
+            postObject = {
+                title: req.body.title,
+                author: req.body.author
+            }
+        } else {
+            postObject = {
+                title: req.body.title
+            }
+        }
+    } else if(req.body.content) {
+        if(req.body.author){
+            postObject = {
+                content: req.body.content,
+                author: req.body.author
+            }
+        } else {
+            postObject = {
+                content: req.body.content
+            }
+        }
+    } else if(req.body.author) {
+        postObject = {
+            author: req.body.author
+        }
+    }
+
+    if(postObject) {
+        const patchedPost = new Post(postObject);
+        Post.findById(req.params.id)
         .then(post =>
             post.update(patchedPost)
-                .then(() => res.json({ success: true })))
+            .then(() => res.json({ success: true })))
             .catch(err => res.status(404).json({ success: false }));
-
-    patchedPost.save().then(post => res.json(post));
+            
+        patchedPost.save().then(post => res.json(post));
+    }
 });
 
 // @route   Delete api/items

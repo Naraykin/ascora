@@ -1,17 +1,31 @@
 const mongoose = require('mongoose');
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
+const AWS = require('aws-sdk'); 
+const dotenv = require('dotenv');
 
 const items = require('./routes/api/items');
 const posts = require('./routes/api/posts');
+const persons = require('./routes/api/persons');
+const images = require('./routes/api/images');
+const aws_files = require('./routes/api/aws_files');
+const cors = require('cors');
 
 const keys =  require('./config/keys');
 
 const app = express();
 
+app.use(cors());
+app.options('*', cors());
+
+dotenv.config({ path: __dirname + '/.env'});
+
 // BodyParser Middleware
-app.use(bodyParser.json());
+app.use(express.json());
+//app.use(express.urlencoded({ extended: false }));
+//app.use(express.urlencoded({ extended: true }));
+
+AWS.config.update({ region: 'eu-central-1' });
 
 // DB Config
 const db = keys.mongoURI;
@@ -25,6 +39,9 @@ mongoose
 // Use Routes
 app.use('/api/items', items);
 app.use('/api/posts', posts);
+app.use('/api/persons', persons);
+app.use('/api/images', images);
+app.use('/api/files', aws_files);
 
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production') {
@@ -34,6 +51,8 @@ if(process.env.NODE_ENV === 'production') {
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });
+
+    
 }
 
 const port = process.env.PORT || 5000;

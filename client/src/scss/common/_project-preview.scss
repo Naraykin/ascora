@@ -6,15 +6,15 @@
     letter-spacing: 2px;
     //justify-content: center;
     align-items: center;
-    border-radius: 10px;
+    //border-radius: 10px;
     padding: 10px 20px;
     width: 340px;
-    height: 120px;
+    height: 80px;
     margin: 15px 30px;
     position: relative;
     cursor: pointer;
     transition: .5s ease;
-    border: 2px solid #ffcd4400;
+    border-left: 4px solid #ffcd4400;
     // box-shadow: 0px 50px 50px -10px #efefef4c;
 
     /*&::after {
@@ -28,7 +28,8 @@
     }*/
 
     &_active {
-        border: 2px solid #ffcd449a;
+        //border: 2px solid #ffcd449a;
+        border-left: 4px solid #ff723a;
     }
     
     &:hover {
@@ -46,8 +47,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 10px;
-        background-color: yellowgreen;
+        //border-radius: 10px;
+        background-color: $top-lowerst-color;
         overflow: hidden;
 
 

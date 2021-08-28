@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ArrowDownIcon({ className }) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" className={ className }  viewBox="0 0 148.52 88.23">
+        <svg xmlns="http://www.w3.org/2000/svg" className={ className }  viewBox="0 0 148.52 88.23" shapeRendering="crispEdges">
             <title>arrow</title>
             <rect className="a" x="138.62" width="9.9" height="9.8"/>
             <rect className="a" x="128.72" width="9.9" height="9.8"/>
