@@ -11,7 +11,7 @@ const images = require('./routes/api/images');
 const aws_files = require('./routes/api/aws_files');
 const cors = require('cors');
 
-const keys =  require('./config/keys');
+const mongoURI =  require('./config/mongo-uri');
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.use(express.json());
 AWS.config.update({ region: 'eu-central-1' });
 
 // DB Config
-const db = keys.mongoURI;
+const db = mongoURI(process.env.MONGO_NAME, process.env.MONGO_PASSWORD);
 
 // Connect to Mongo
 mongoose
