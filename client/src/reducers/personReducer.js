@@ -6,7 +6,7 @@ const initialState = {
     loading: false
 };
 
-export default function(state = initialState, action) {
+export default function personReducer(state = initialState, action) {
     switch(action.type) {
         case GET_PERSONS:
             return {

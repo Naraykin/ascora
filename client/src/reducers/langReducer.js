@@ -15,7 +15,7 @@ const initialState = {
     loading: false
 };
 
-export default function(state = initialState, action) {
+export default function langReducer(state = initialState, action) {
     switch(action.type) {
         case GET_LANGS:
             return {
